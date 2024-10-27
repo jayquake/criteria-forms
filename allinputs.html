@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>All Inputs</title>
+  </head>
+  <body>
+    <h1 class="text-center lead mb-2">ALL Input Types - Forms</h1>
+    <div class="container w-75 text-center">
+      <div class="container">
+        <form action="#">
+          <!-- Size and Maxlength -->
+          <label for="uname">Username (size and maxlength):</label><br />
+          <input
+            type="text"
+            id="uname"
+            name="uname"
+            size="15"
+            maxlength="20"
+            required
+          /><br />
+
+          <!-- Pattern -->
+          <label for="pcode">Postcode (Pattern for five digits):</label><br />
+          <input
+            type="text"
+            id="pcode"
+            name="pcode"
+            pattern="\d{5}"
+            title="Enter a five-digit code"
+            required
+          /><br />
+
+          <!-- Placeholder -->
+          <label for="email">Email (Placeholder):</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="name@example.com"
+          /><br />
+
+          <!-- Readonly and Disabled -->
+          <label for="readonly">Read Only:</label><br />
+          <input
+            type="text"
+            id="readonly"
+            name="readonly"
+            readonly
+            value="You can't change this"
+          /><br />
+          <label for="disabled">Disabled:</label><br />
+          <input
+            type="text"
+            id="disabled"
+            name="disabled"
+            disabled
+            value="You can't interact with this"
+          /><br /><br />
+        </form>
+
+        <!-- Number Input -->
+        <h2>Number Input</h2>
+        <form action="#">
+          <label for="quantity">Quantity (between 1 and 5):</label><br />
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="5"
+            step="1"
+          /><br /><br />
+        </form>
+
+        <!-- Range Input -->
+        <h2>Range Input</h2>
+        <form action="#">
+          <label for="volume">Volume (between 0 and 50):</label><br />
+          <input
+            type="range"
+            id="volume"
+            name="volume"
+            min="0"
+            max="50"
+            step="10"
+            value="25"
+          /><br /><br />
+        </form>
+
+        <!-- File Input -->
+        <h2>File Input</h2>
+        <form action="#">
+          <label for="files">Select files (multiple):</label>
+          <input type="file" id="files" name="files" multiple /><br /><br />
+        </form>
+
+        <!-- Radio Buttons -->
+        <h2>Radio Buttons</h2>
+        <form action="#">
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label><br />
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label><br />
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label><br /><br />
+        </form>
+
+        <!-- Checkboxes -->
+        <h2>Checkboxes</h2>
+        <form action="#">
+          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+          <label for="vehicle1"> I have a bike</label><br />
+          <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+          <label for="vehicle2"> I have a car</label><br /><br />
+        </form>
+
+        <!-- Buttons -->
+        <h2>Buttons</h2>
+        <form action="#">
+          <input type="button" value="Button" /><br /><br />
+          <input type="submit" value="Submit" /><br /><br />
+          <input type="reset" value="Reset" /><br /><br />
+        </form>
+
+        <!-- Fieldset -->
+        <h2>Fieldset</h2>
+        <form action="#">
+          <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br />
+            <input type="text" id="fname" name="fname" /><br />
+            <label for="lname">Last name:</label><br />
+            <input type="text" id="lname" name="lname" /><br />
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" />
+          </fieldset>
+        </form>
+        <h2>Datalist/Autocomplete</h2>
+        <form action="#">
+          <label for="browser">Choose your browser from the list:</label>
+          <input
+            list="browsers"
+            id="browser"
+            name="browser"
+            placeholder="Start typing..."
+          />
+          <datalist id="browsers">
+            <option value="Internet Explorer"> </option>
+            <option value="Firefox"> </option>
+            <option value="Chrome"> </option>
+            <option value="Opera"> </option>
+            <option value="Safari"> </option></datalist
+          ><br /><br />
+        </form>
+
+        <!-- Textarea -->
+        <h2>Textarea</h2>
+        <form action="#">
+          <label for="message">Enter your message:</label><br />
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            cols="50"
+            placeholder="Enter text..."
+          ></textarea
+          ><br /><br />
+        </form>
+
+        <!-- Select/Option/Dropdown -->
+        <h2>Select/Option/Dropdown</h2>
+        <form action="#">
+          <label for="cars">Choose a car:</label><br />
+          <select id="cars" name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option> </select
+          ><br /><br />
+        </form>
+
+        <!-- Output -->
+        <h2>Output</h2>
+        <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+          <label for="a">Enter a value (a):</label><br />
+          <input type="range" id="a" name="a" value="50" /><br /><br />
+          <label for="b">Enter a value (b):</label><br />
+          <input type="range" id="b" name="b" value="50" /><br /><br />
+          <label for="result">Result (a + b):</label><br />
+          <output id="result" name="result">100</output>
+        </form>
+        <h2>Fieldset and Legend</h2>
+        <form>
+          <fieldset>
+            <legend>Personal information:</legend>
+            <label for="fname">First name:</label><br />
+            <input type="text" id="fname" name="fname" /><br /><br />
+            <label for="lname">Last name:</label><br />
+            <input type="text" id="lname" name="lname" />
+          </fieldset>
+        </form>
+
+        <!-- Progress -->
+        <h2>Progress</h2>
+        <label for="file">Downloading progress:</label>
+        <progress id="file" value="70" max="100">70%</progress>
+
+        <!-- Meter -->
+        <h2>Meter</h2>
+        <label for="disk_c">Disk Usage (C:):</label>
+        <meter
+          id="disk_c"
+          min="0"
+          max="500"
+          low="200"
+          high="400"
+          optimum="300"
+          value="350"
+        ></meter>
+
+        <!-- Using JavaScript to make interactive changes -->
+        <h2>Interactive Input and Output</h2>
+        <form>
+          <label for="inputRange"
+            >Move the slider (value will update in the text box):</label
+          ><br />
+          <input
+            type="range"
+            id="inputRange"
+            name="inputRange"
+            min="0"
+            max="100"
+            onchange="updateTextInput(this.value);"
+          />
+          <input type="text" id="textInput" value="" />
+        </form>
+
+        <script>
+          function updateTextInput(val) {
+            document.getElementById("textInput").value = val;
+          }
+        </script>
+        <h2>Datalist</h2>
+        <form>
+          <label for="browser">Choose your browser from the list:</label>
+          <input list="browsers" name="browser" id="browser" />
+          <datalist id="browsers">
+            <option value="Edge"> </option>
+            <option value="Firefox"> </option>
+            <option value="Chrome"> </option>
+            <option value="Opera"> </option>
+            <option value="Safari"> </option>
+          </datalist>
+        </form>
+
+        <!-- Required Input -->
+        <h2>Required Input</h2>
+        <form>
+          <label for="username">Username (required):</label><br />
+          <input type="text" id="username" name="username" required /><br />
+          <input type="submit" value="Submit" />
+        </form>
+
+        <!-- Interactive JavaScript and Form Validation -->
+        <h2>Interactive JavaScript and Form Validation</h2>
+        <form id="interactiveForm">
+          <label for="reqInput">Fill this to enable submit button:</label><br />
+          <input
+            type="text"
+            id="reqInput"
+            oninput="enableSubmitButton()"
+            required
+          /><br />
+          <input type="submit" id="submitButton" disabled value="Submit" />
+        </form>
+
+        <script>
+          function enableSubmitButton() {
+            let reqInput = document.getElementById("reqInput").value;
+            if (reqInput) {
+              document.getElementById("submitButton").disabled = false;
+            } else {
+              document.getElementById("submitButton").disabled = true;
+            }
+          }
+        </script>
+
+        <!-- Accessibility Enhancements -->
+        <h2>Accessibility Enhancements</h2>
+        <form>
+          <label for="accessibleInput">Accessible input:</label><br />
+          <input
+            type="text"
+            id="accessibleInput"
+            name="accessibleInput"
+            aria-describedby="inputHelp"
+          />
+          <small id="inputHelp" class="form-text text-muted"
+            >We'll never share your input with anyone else.</small
+          >
+        </form>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var s = document.createElement("script");
+        var h = document.querySelector("head") || document.body;
+        s.src = "https://acsbapp.com/apps/app/dist/js/app.js";
+        s.async = true;
+        s.onload = function () {
+          acsbJS.init({
+            statementLink: "",
+            footerHtml: "",
+            hideMobile: false,
+            hideTrigger: false,
+            disableBgProcess: false,
+            language: "en",
+            position: "right",
+            leadColor: "#146FF8",
+            triggerColor: "#146FF8",
+            triggerRadius: "50%",
+            triggerPositionX: "right",
+            triggerPositionY: "bottom",
+            triggerIcon: "people",
+            triggerSize: "bottom",
+            triggerOffsetX: 20,
+            triggerOffsetY: 20,
+            mobile: {
+              triggerSize: "small",
+              triggerPositionX: "right",
+              triggerPositionY: "bottom",
+              triggerOffsetX: 10,
+              triggerOffsetY: 10,
+              triggerRadius: "20"
+            }
+          });
+        };
+        h.appendChild(s);
+      })();
+    </script>
+  </body>
+</html>

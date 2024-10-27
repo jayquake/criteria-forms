@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      This is a static template, there is no bundler or bundling involved!
+    </h1>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" class="form-control"></textarea>
+      </div>
+
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="termsCheck"
+        />
+        <label class="form-check-label" for="termsCheck"
+          >Accept Terms and Conditions</label
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <!-- Success message without role="alert" -->
+      <div
+        id="successMessage"
+        class="alert alert-success mt-3"
+        style="display: none;"
+      >
+        Form submitted successfully!
+      </div>
+
+      <!-- Failure message without role="alert" -->
+      <div
+        id="failureMessage"
+        class="alert alert-danger mt-3"
+        style="display: none;"
+      >
+        Form submission failed. Please try again.
+      </div>
+    </form>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          // Prevent the form from submitting normally
+          event.preventDefault();
+
+          // Mock form validation - replace with your own validation
+          var isValid = true;
+
+          // Hide both success and failure messages
+          document.getElementById("successMessage").style.display = "none";
+          document.getElementById("failureMessage").style.display = "none";
+
+          if (isValid) {
+            // Mock server response delay
+            setTimeout(function () {
+              // Show success message
+              document.getElementById("successMessage").style.display = "block";
+            }, 1000); // 1 second delay
+          } else {
+            // Mock server response delay
+            setTimeout(function () {
+              // Show failure message
+              document.getElementById("failureMessage").style.display = "block";
+            }, 1000); // 1 second delay
+          }
+        });
+    </script>
+  </body>
+</html>

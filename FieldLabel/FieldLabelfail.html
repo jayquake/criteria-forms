@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .pseudo-element::before {
+        content: "Important content";
+      }
+    </style>
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      Field Label Failure
+    </h1>
+    <h2>Failure Case 1: Missing Label</h2>
+    <form>
+      <input type="text" id="username1" name="username" />
+      <input type="email" id="email1" name="email" />
+      <input type="password" id="password1" name="password" />
+    </form>
+
+    <h2>Failure Case 2: Label with No Associated Field</h2>
+    <form>
+      <label>Username:</label>
+      <input type="text" name="username" />
+      <label>Email:</label>
+      <input type="email" name="email" />
+      <label>Password:</label>
+      <input type="password" name="password" />
+    </form>
+
+    <h2>
+      Failure Case 3: Label with 'for' Attribute Not Matching Any Field ID
+    </h2>
+    <form>
+      <label for="nonexistent_id">Username:</label>
+      <input type="text" id="username2" name="username" />
+      <label for="nonexistent_id">Email:</label>
+      <input type="email" id="email2" name="email" />
+      <label for="nonexistent_id">Password:</label>
+      <input type="password" id="password2" name="password" />
+    </form>
+
+    <h2>
+      Failure Case 4: 'aria-label' or 'aria-labelledby' Not Providing a
+      Descriptive Label
+    </h2>
+    <form>
+      <input
+        type="text"
+        id="username3"
+        name="username"
+        aria-label="Text Field 1"
+      />
+      <input type="email" id="email3" name="email" aria-label="Text Field 2" />
+      <input
+        type="password"
+        id="password3"
+        name="password"
+        aria-label="Text Field 3"
+      />
+    </form>
+
+    <form>
+      <!-- Example 1 -->
+      <div>
+        <input type="text" id="username2" />
+      </div>
+
+      <!-- Example 2 -->
+      <div>
+        <input type="password" id="password2" />
+      </div>
+
+      <!-- Example 3 -->
+      <div>
+        <input type="email" id="email2" />
+      </div>
+    </form>
+
+    <!-- F2: Incorrectly using changes in text presentation to convey information without using the appropriate markup or text -->
+    <h2>F2: Incorrect use of text presentation to convey information</h2>
+    <div style="font-weight: bold;">
+      This text is bold, which might indicate it's a heading, but it's not
+      marked up as a heading.
+    </div>
+
+    <!-- F33 & F34: Using white space characters to create multiple columns or format tables in plain text content -->
+    <h2>F33 & F34: Using white space characters for columns or tables</h2>
+    <pre>
+Name    Age
+John    25
+Doe     30
+</pre
+    >
+
+    <!-- F42: Emulating links -->
+    <h2>F42: Emulating links</h2>
+    <div
+      onclick="location.href='https://example.com';"
+      style="cursor: pointer;"
+    >
+      Fake link
+    </div>
+
+    <!-- F43: Using structural markup in a way that does not represent relationships in the content -->
+    <h2>F43: Misrepresenting relationships with structural markup</h2>
+    <h2>Subheading</h2>
+    <h1>Main heading</h1>
+
+    <!-- F46: Using th elements in layout tables -->
+    <h2>F46: Using th elements in layout tables</h2>
+    <table>
+      <tr>
+        <th style="font-weight: normal;">
+          This is a layout cell, not a table header.
+        </th>
+      </tr>
+    </table>
+
+    <!-- F48: Using the pre element to markup tabular information -->
+    <h2>F48: Using the pre element for tabular information</h2>
+    <pre>
+Name: John
+Age: 25
+</pre
+    >
+
+    <!-- F87: Inserting non-decorative content by using ::before and ::after pseudo-elements and the 'content' property in CSS -->
+    <h2>F87: Inserting non-decorative content with pseudo-elements</h2>
+    <div class="pseudo-element"></div>
+
+    <!-- F90: Incorrectly associating table headers and content via the headers and id attributes -->
+    <h2>F90: Incorrectly associating table headers and content</h2>
+    <table>
+      <tr>
+        <th id="name">Name</th>
+      </tr>
+      <tr>
+        <td headers="age">John</td>
+      </tr>
+    </table>
+
+    <!-- F91: Not correctly marking up table headers -->
+    <h2>F91: Not correctly marking up table headers</h2>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>Age</td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>25</td>
+      </tr>
+    </table>
+
+    <!-- F92: The use of role presentation on content which conveys semantic information -->
+    <h2>F92: Use of role presentation on semantic content</h2>
+    <h1 role="presentation">This is a heading</h1>
+  </body>
+</html>

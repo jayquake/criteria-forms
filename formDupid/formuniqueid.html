@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>F</title>
+  </head>
+  <body>
+    <h1>Form Duplicate ID's Accessible</h1>
+    <!-- First Form -->
+    <form id="registrationForm1">
+      <label for="firstName1">First Name:</label>
+      <input type="text" id="firstName1" name="firstName" />
+
+      <label for="lastName1">Last Name:</label>
+      <input type="text" id="lastName1" name="lastName" />
+
+      <label for="email1">Email:</label>
+      <input type="email" id="email1" name="email" />
+    </form>
+
+    <!-- Second Form -->
+    <form id="registrationForm2">
+      <label for="firstName2">First Name:</label>
+      <input type="text" id="firstName2" name="firstName" />
+
+      <label for="lastName2">Last Name:</label>
+      <input type="text" id="lastName2" name="lastName" />
+
+      <label for="email2">Email:</label>
+      <input type="email" id="email2" name="email" />
+    </form>
+    <!-- First Form -->
+    <form id="registrationForm1">
+      <div class="form-group">
+        <label for="firstName1">First Name:</label>
+        <input
+          type="text"
+          id="firstName1"
+          name="firstName"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName1">Last Name:</label>
+        <input
+          type="text"
+          id="lastName1"
+          name="lastName"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email1">Email:</label>
+        <input type="email" id="email1" name="email" class="form-control" />
+      </div>
+    </form>
+
+    <!-- Second Form -->
+    <form id="registrationForm2">
+      <div class="form-group">
+        <label for="firstName2">First Name:</label>
+        <input
+          type="text"
+          id="firstName2"
+          name="firstName"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName2">Last Name:</label>
+        <input
+          type="text"
+          id="lastName2"
+          name="lastName"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email2">Email:</label>
+        <input type="email" id="email2" name="email" class="form-control" />
+      </div>
+    </form>
+    <script>
+      (function () {
+        var s = document.createElement("script");
+        var h = document.querySelector("head") || document.body;
+        s.src = "https://acsbapp.com/apps/app/dist/js/app.js";
+        s.async = true;
+        s.onload = function () {
+          acsbJS.init({
+            statementLink: "",
+            footerHtml: "",
+            hideMobile: false,
+            hideTrigger: false,
+            disableBgProcess: false,
+            language: "en",
+            position: "right",
+            leadColor: "#146FF8",
+            triggerColor: "#146FF8",
+            triggerRadius: "50%",
+            triggerPositionX: "right",
+            triggerPositionY: "bottom",
+            triggerIcon: "people",
+            triggerSize: "bottom",
+            triggerOffsetX: 20,
+            triggerOffsetY: 20,
+            mobile: {
+              triggerSize: "small",
+              triggerPositionX: "right",
+              triggerPositionY: "bottom",
+              triggerOffsetX: 10,
+              triggerOffsetY: 10,
+              triggerRadius: "20"
+            }
+          });
+        };
+        h.appendChild(s);
+      })();
+    </script>
+  </body>
+</html>

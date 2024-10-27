@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>Custom Select Field Fail</h1>
+    <p>Custom select fields should be made accessible</p>
+    <p>
+      Screen readers have built-in mechanisms to handle select fields. By
+      default, assistive technology does not support custom select fields, and
+      using those may prevent screen reader users from interacting with the
+      fields.
+    </p>
+    <p>
+      Resolution: Create a standard select field with all the options and make
+      it available only for screen readers using the screen reader only
+      technique. Then, hide the custom select box from screen readers
+      using aria-hidden=true. Don't forget to add the same functionality to this
+      hidden field as your custom one. Using this method, screen readers will
+      not "see" the custom field but will see the standard one and interact with
+      it regularly.
+    </p>
+
+    <div>
+      <button>Volvo</button>
+      <ul style="display: none;">
+        <li>Saab</li>
+        <li>Mercedes</li>
+        <li>Audi</li>
+      </ul>
+    </div>
+    <div>
+      <button>Volvo</button>
+      <ul style="display: none;">
+        <li>Saab</li>
+        <li>Mercedes</li>
+        <li>Audi</li>
+      </ul>
+    </div>
+    <select style="display: none;">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+    <div role="textbox">
+      <button>Volvo</button>
+      <ul style="display: none;">
+        <li>Saab</li>
+        <li>Mercedes</li>
+        <li>Audi</li>
+      </ul>
+    </div>
+  </body>
+</html>

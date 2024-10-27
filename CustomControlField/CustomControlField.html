@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Static Template</title>
+  </head>
+  <style>
+    .visually-hidden {
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+  </style>
+  <style>
+    .checkbox-custom {
+      display: none;
+    }
+    .checkbox-label {
+      position: relative;
+      padding-left: 25px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .checkbox-label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+    }
+    .checkbox-custom:checked + .checkbox-label:before {
+      content: "\\2713";
+    }
+  </style>
+  <body>
+    <h1>Custom Control Field</h1>
+    <p>
+      Screen readers have built-in mechanisms to handle checkboxes. By default,
+      assistive technology does not support custom checkboxes, and using those
+      may prevent screen reader users from interacting with the fields.
+    </p>
+    <p>
+      Screen readers have built-in mechanisms to handle checkboxes. By default,
+      assistive technology does not support custom checkboxes, and using those
+      may prevent screen reader users from interacting with the fields.
+    </p>
+    <p>
+      If you are using standard LABEL and INPUT fields to design the custom
+      checkbox using CSS, you need to ensure that the checkbox input is fully
+      visible to assistive technology and the browser, but only visually hidden.
+      To ensure that, you can hide it using opacity, width, height, and
+      positioning, but never hide it using display=none or visibility=hidden.
+    </p>
+    <label for="checkbox1">Option 1</label>
+    <input class="visually-hidden" type="checkbox" id="checkbox1" />
+    <div role="checkbox" aria-checked="false" tabindex="0">Option 1</div>
+    <input
+      class="checkbox-custom"
+      id="checkbox1"
+      type="checkbox"
+      role="checkbox"
+      aria-checked="false"
+    />
+    <label class="checkbox-label" for="checkbox1">Option 1</label>
+  </body>
+</html>
